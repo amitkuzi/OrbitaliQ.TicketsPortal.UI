@@ -1,0 +1,44 @@
+{
+	"Common": {
+		"Country": "Pays"
+	},
+	"Copy": "",
+	"DRAWER_ACTIONS": {
+		"AddBalance": "",
+		"CloseShift": "",
+		"OpenDrawer": "",
+		"OpenShift": "",
+		"RemoveBalance": ""
+	},
+	"EnterInvoiceNumber": "",
+	"InvoiceNumber": "",
+	"Source": "",
+	"Submit": "",
+	"hardwareManager": {
+		"PleaseSwipe": "",
+		"SwipeCreditDebitCard": ""
+	},
+	"payment": {
+		"paymentFailedMessage": "Quelque chose s'est mal passé. Votre carte n'a pas été débitée",
+		"paymentFailedTitle": "échoué",
+		"paymentSuccessMessage": "Votre carte a été chargée avec {amount}",
+		"paymentSuccessTitle": "approuvée"
+	},
+	"payments": {
+		"dateIsInThePast": "la date est dans le passé",
+		"dateIsInvalid": "la date est invalide"
+	},
+	"refund": "",
+	"ticketing": {
+		"maximumOfUsersAreAllowed": "{{maxUsers}} utilisateurs sont autorisés",
+    "maximumOfTicketsAreAllowed": "{{maxTickets}} billets sont autorisés",
+    "successCopiedToClipboard": "Copié dans le presse-papier",
+		"successCouponAdded": "Génial! Votre coupon est maintenant utilisé pour cet achat",
+		"successVoucherAdded": "Génial! Votre voucher est maintenant utilisé pour cet achat",
+		"ticketIsNotAvailableAtTheMoment": "Le billet n'est pas disponible pour le moment"
+	},
+	"tickets": {
+		"DoYouWantToPrintTickets": "",
+		"TicketsPrint": ""
+	}
+}

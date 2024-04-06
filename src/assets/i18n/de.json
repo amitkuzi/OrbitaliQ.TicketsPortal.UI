@@ -1,0 +1,44 @@
+{
+	"Common": {
+		"Country": "Land"
+	},
+	"Copy": "Kopieren",
+	"DRAWER_ACTIONS": {
+		"AddBalance": "Bargeld hinzufügen",
+		"CloseShift": "Schicht abschließen",
+		"OpenDrawer": "Kassenschublade öffnen",
+		"OpenShift": "Schicht eröffnen",
+		"RemoveBalance": "Bargeld entnehmen"
+	},
+	"EnterInvoiceNumber": "Rechnungsnummer eingeben",
+	"InvoiceNumber": "Rechnungsnummer",
+	"Source": "Quelle",
+	"Submit": "Absenden",
+	"hardwareManager": {
+		"PleaseSwipe": "Bitte mit dem Kreditkartenterminal bezahlen",
+		"SwipeCreditDebitCard": "Kartenzahlung"
+	},
+	"payment": {
+		"paymentFailedMessage": "Es ist ein Fehler aufgetreten. Deine Karte wurde nicht belastet",
+		"paymentFailedTitle": "Fehlgeschlagen",
+		"paymentSuccessMessage": "Deine Karte wurde belastet mit {amount}",
+		"paymentSuccessTitle": "Bestätigt"
+	},
+	"payments": {
+		"dateIsInThePast": "Das Datum liegt in der Vergangenheit",
+		"dateIsInvalid": "Das Datum ist ungültig"
+	},
+	"refund": "",
+	"ticketing": {
+		"maximumOfUsersAreAllowed": "{{maxUsers}} Benutzer sind erlaubt",
+    "maximumOfTicketsAreAllowed": "{{maxTickets}} Tickets sind erlaubt",
+    "successCopiedToClipboard": "In die Zwischenablage kopiert",
+		"successCouponAdded": "Super! Dein Rabattcode wurde auf Deinen Warenkorb angewendet",
+		"successVoucherAdded": "Super! Dein Gutschein wurde auf Deinen Warenkorb angewendet",
+		"ticketIsNotAvailableAtTheMoment": "Ticket ist im Moment nicht verfügbar"
+	},
+	"tickets": {
+		"DoYouWantToPrintTickets": "Möchten Sie die Tickets ausdrucken?",
+		"TicketsPrint": "Tickets ausdrucken"
+	}
+}
