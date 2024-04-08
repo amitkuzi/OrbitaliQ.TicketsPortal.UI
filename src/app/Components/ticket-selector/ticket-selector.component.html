@@ -11,6 +11,14 @@
         </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <p>ticket-selector works!</p>
+        <h3>{{ticketRepo$ | async }}</h3>
+        <mat-toolbar-row *ngFor="let ticket of ticketRepo$ | async">
+            <button mat-fab layout-padding color="primary" (click)="onSelect(ticket)">Add</button>
+            <span layout-padding class="example-spacer"></span>
+            <span layout-padding>{{ticket.name}}</span>
+            <span layout-padding class="example-spacer"></span>
+            <span layout-padding>{{ticket.description}}</span>
+
+        </mat-toolbar-row>
     </mat-card-content>
 </mat-card>
