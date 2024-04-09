@@ -1,0 +1,19 @@
+<div class="cart-view">
+    <h2>Your Cart {{cart$ | async}}</h2> <button mat-fab (click)="ClearCart()">Clear </button>
+    <div class="cart" *ngFor="let cartItem of cartItems">
+        <div class="ticket">
+            <span>{{cartItem.item.name}}</span>
+            <span style="margin: 5px;"></span>
+            <span>{{cartItem.item.prices.fixedPrice}}</span>
+            <!-- <button (click)="onRemove(ticket)">Remove</button> -->
+            <span style="margin: 5px;"></span>
+            <button mat-fab (click)="reduce(cartItem.item.id)">-</button>
+            <span>{{cartItem.quantity}}</span>
+            <button mat-fab (click)="increac(cartItem.item)">+</button>
+        </div>
+
+    </div>
+
+    <div class="total">
+        <h3>Total: {{totalPrice}}</h3>
+    </div>

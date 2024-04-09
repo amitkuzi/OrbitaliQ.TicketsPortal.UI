@@ -18,24 +18,25 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { TicketSelectorComponent } from './Components/ticket-selector/ticket-selector.component';
+import { CartViewComponent } from "./Components/cart-view/cart-view.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports:
-    [
-      TicketSelectorComponent,
-      RouterOutlet,
-      HttpClientModule,
-      MatButtonModule,
-      MatIconModule,
-      MatCardModule,
-      MatToolbarModule,
-      MatSidenavModule,
-      MatListModule
-    ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [
+        TicketSelectorComponent,
+        RouterOutlet,
+        HttpClientModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        CartViewComponent
+    ]
 })
 export class AppComponent implements OnInit {
   title = 'OrbitaliQ.TicketsPortal.UI';

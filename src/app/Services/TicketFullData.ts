@@ -5,7 +5,7 @@ export class TicketFullData implements CartSaleble {
     "id": number;
     "name": string;
     "description": string;
-    "price": Price;
+    "prices": Price;
     "extraTimePrice": number;
     "extraTimeIntervalTimeInMinutes": number;
     "startDateTime": Date;

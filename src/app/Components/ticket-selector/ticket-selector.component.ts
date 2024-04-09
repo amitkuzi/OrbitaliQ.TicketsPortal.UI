@@ -8,7 +8,7 @@ import { TicketFullData } from '../../Services/TicketFullData';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { CartServiceService } from '../../Services/Cart/cart-service.service';
+import { CartService } from '../../Services/Cart/cart-service.service';
 
 
 @Component({
@@ -37,7 +37,7 @@ export class TicketSelectorComponent implements OnInit {
     private matToolbarModule: MatToolbarModule,
     private matIconModule: MatIconModule,
     private client: HttpClient,
-    private cartService: CartServiceService
+    private cartService: CartService
   ) { }
 
   public get ticketRepo$(): Observable<TicketFullData[]> {

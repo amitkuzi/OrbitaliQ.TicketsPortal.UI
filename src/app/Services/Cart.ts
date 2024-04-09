@@ -9,7 +9,7 @@ export interface CartSaleble {
     "id": number;
     "name": string;
     "description": string;
-    "price": Price;
+    "prices": Price;
 }
 
 export class CartItem {

@@ -6,7 +6,8 @@ import { Cart, CartSaleble } from '../Cart';
 @Injectable({
   providedIn: 'root',
 })
-export class CartServiceService {
+export class CartService {
+
   public cart$: BehaviorSubject<Cart> = new BehaviorSubject<Cart>({ items: [] });
   constructor() { }
 
@@ -23,6 +24,11 @@ export class CartServiceService {
     this.cart$.next(currentCart);
     return ticket.id;
   }
+
+  public ClearCart(): void {
+    this.cart$.next({ items: [] });
+  }
+
 
   public CartDecrease(itemId: number): number {
     var currentCart = this.cart$.value;
