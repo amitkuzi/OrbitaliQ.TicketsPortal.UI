@@ -13,10 +13,10 @@
         </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <div class="langs" *ngFor="let langItem of this.translations$ | async ">
-            <div class="langItem">
-                <span>{{langItem}}</span>
-            </div>
+        <div>{{this.translations$| async | mapitemsDebug}}</div>
+        <span class="example-spacer  "></span>
+        <div class="langs" *ngFor="let langItem of this.translations$ | async | keyvalue ">
+            <span>{{langItem | mapitemsDebug }}</span>
         </div>
     </mat-card-content>
 </mat-card>

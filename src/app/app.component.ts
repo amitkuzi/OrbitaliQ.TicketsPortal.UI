@@ -19,6 +19,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { TicketSelectorComponent } from './Components/ticket-selector/ticket-selector.component';
 import { CartViewComponent } from "./Components/cart-view/cart-view.component";
+import { MapitemsDebugPipe } from './pipes/mapitems-debug.pipe';
+
+
 
 @Component({
   selector: 'app-root',
@@ -36,8 +39,11 @@ import { CartViewComponent } from "./Components/cart-view/cart-view.component";
     MatSidenavModule,
     MatListModule,
     CartViewComponent,
-    RouterModule
-  ]
+    RouterModule,
+    MapitemsDebugPipe
+  ],
+  providers: [ServerConfigService],
+
 })
 export class AppComponent implements OnInit {
 

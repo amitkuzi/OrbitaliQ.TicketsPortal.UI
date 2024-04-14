@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
   providedIn: 'root',
 })
 export class LangLocalsService {
-  translationsSubject: BehaviorSubject<Map<string, string>> = new BehaviorSubject<Map<string, string>>(new Map<string, string>());
+  public translationsSubject$: BehaviorSubject<Map<string, string>> = new BehaviorSubject<Map<string, string>>(new Map<string, string>());
   availableLanguages: BehaviorSubject<LangAvailableItem[]> = new BehaviorSubject<LangAvailableItem[]>([]);
 
   constructor(
@@ -45,9 +45,7 @@ export class LangLocalsService {
     });
   }
 
-  public get translations$(): Observable<Map<string, string>> {
-    return this.translationsSubject.asObservable();
-  }
+
 
 
   private get getLanguageURI(): string { return `${Environments.ticketPortalApi}${Environments.LanguageURI}`; }
@@ -60,7 +58,7 @@ export class LangLocalsService {
       })
       .subscribe((translations: Map<string, string>): void => {
         console.log("LangLocalsService updateTranslations:", translations);
-        this.translationsSubject.next(translations);
+        this.translationsSubject$.next(translations);
       });
   }
 
