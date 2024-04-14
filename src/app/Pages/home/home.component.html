@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <div class="langs" *ngFor="let langItem of this.AvailableLanguages$ | async ">
+                <div class="langItem">
+                    <span>{{langItem.link}}</span>
+                    <span style="margin: 5px;"></span>
+                    <span>{{langItem.code}}</span>
+                    <span style="margin: 5px;"></span>
+                    <span>{{langItem.title}}</span>
+                </div>
+            </div>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="langs" *ngFor="let langItem of this.translations$ | async ">
+            <div class="langItem">
+                <span>{{langItem}}</span>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

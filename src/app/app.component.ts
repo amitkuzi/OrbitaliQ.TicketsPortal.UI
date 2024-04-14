@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, RouterModule } from '@angular/router';
 import { ServerConfigService } from './Services/configuration/server-config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,30 +21,34 @@ import { TicketSelectorComponent } from './Components/ticket-selector/ticket-sel
 import { CartViewComponent } from "./Components/cart-view/cart-view.component";
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    imports: [
-        TicketSelectorComponent,
-        RouterOutlet,
-        HttpClientModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatToolbarModule,
-        MatSidenavModule,
-        MatListModule,
-        CartViewComponent
-    ]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+  imports: [
+    TicketSelectorComponent,
+    RouterOutlet,
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    CartViewComponent,
+    RouterModule
+  ]
 })
 export class AppComponent implements OnInit {
+
   title = 'OrbitaliQ.TicketsPortal.UI';
   constructor(
     private configService: ServerConfigService,
   ) {
     console.log('App Component');
   }
+
+  router: Router = new Router();
 
   ngOnInit(): void {
     console.log('App Component oninit');

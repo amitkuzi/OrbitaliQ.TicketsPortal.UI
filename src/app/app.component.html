@@ -1,13 +1,16 @@
 <h1> app main </h1>
 
 <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
     <span>OrbitaliQ Tickets Portal</span>
     <span class="example-spacer"></span>
     <button mat-fab routerLink="/login">Login</button>
     <button mat-fab routerLink="/register">Register</button>
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened="true">
         <mat-nav-list>
             <a mat-list-item routerLink="/home">Home</a>
@@ -16,13 +19,7 @@
             <a mat-list-item routerLink="/profile">Profile</a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
-        <mat-card>
-            <app-ticket-selector class=" "></app-ticket-selector>
-        </mat-card>
-        <div layout-padding class="example-spacer"></div>
-        <mat-card>
-            <app-cart-view></app-cart-view>
-        </mat-card>
+    <mat-sidenav-content class="min-height">
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
