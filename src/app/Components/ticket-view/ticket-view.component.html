@@ -1,0 +1,10 @@
+<mat-card *ngIf="ticket; else loading" (click)="CardClicked()">
+    <mat-card-title [appTraslate]="ticket.name"></mat-card-title>
+
+    <mat-card-title class="col-md-12" [appTraslate]="ticket.description"></mat-card-title>
+</mat-card>
+
+
+<ng-template #loading>
+    <p> loading ... {{ticket | mapitemsDebug}}</p>
+</ng-template>

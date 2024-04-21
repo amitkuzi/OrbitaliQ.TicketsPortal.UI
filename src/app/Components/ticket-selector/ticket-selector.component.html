@@ -14,9 +14,7 @@
         <mat-toolbar-row *ngFor="let ticket of ticketRepo$ | async">
             <button mat-fab color="primary" (click)="onSelect(ticket)">Add</button>
             <span style="margin: 5px;"></span>
-            <div class="col-md-12 card-title" [appTraslate]="ticket.name"> </div>
-            <span style="margin: 5px;">--</span>
-            <div class="col-md-12" [appTraslate]="ticket.description"></div>
+            <app-ticket-view [ticket]="ticket" (ticketSelected)="onClicked($event)"></app-ticket-view>
             <span class="example-spacer"></span>
             <div class="right">{{ticket.prices.fixedPrice | price}}</div>
 

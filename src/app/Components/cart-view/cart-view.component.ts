@@ -9,6 +9,7 @@ import { CartItem, CartSaleble } from '../../Services/Cart';
 import { TraslateDirective } from '../../directives/traslate.directive';
 import { PricePipe } from '../../pipes/price.pipe';
 import { MapitemsDebugPipe } from "../../pipes/mapitems-debug.pipe";
+import { TicketViewComponent } from "../ticket-view/ticket-view.component";
 
 @Component({
     selector: 'app-cart-view',
@@ -23,7 +24,8 @@ import { MapitemsDebugPipe } from "../../pipes/mapitems-debug.pipe";
         CommonModule,
         TraslateDirective,
         PricePipe,
-        MapitemsDebugPipe
+        MapitemsDebugPipe,
+        TicketViewComponent
     ]
 })
 export class CartViewComponent implements OnInit {

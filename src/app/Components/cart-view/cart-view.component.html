@@ -3,13 +3,14 @@
     <button mat-fab (click)="ClearCart()">Clear </button>
     <div class="cart" *ngFor="let cartItem of cartItems ; index as i ; first as ff">
         <div class="ticket">
-            <span *ngIf="ff; else elseBlock" style="margin: 5px;"> {{ i + 1}}/{{cartItems.length}} </span>
-            <ng-template #elseBlock>Content to render when condition is true.</ng-template>
-            <span style="margin: 5px;"> {{ i + 1}}/{{cartItems.length}} </span>
-            <div layout-padding [appTraslate]="cartItem.item.name"> </div>
-            <span style="margin: 5px;"></span>
-            <div layout-padding> {{cartItem.item.prices.fixedPrice | price}} </div>
-            <span style="margin: 5px;"></span>
+            <span *ngIf="ff; else elseBlock" style="margin: 5px;">
+                <p> main ticket </p> {{ i + 1}}/{{cartItems.length}}
+            </span>
+            <ng-template #elseBlock><span style="margin: 5px;"> {{ i + 1}}/{{cartItems.length}} </span></ng-template>
+            <div [style.background-color]="ff ? 'red' : 'green'">
+                <app-ticket-view [ticket]="cartItem.item"></app-ticket-view>
+            </div>
+            <span style="margin: 5px;" [style.background-color]="ff ? 'red' : 'green'"></span>
             <button mat-fab (click)="reduce(cartItem.item.id)">-</button>
             <span>{{cartItem.quantity}}</span>
             <button mat-fab (click)="increac(cartItem.item)">+</button>

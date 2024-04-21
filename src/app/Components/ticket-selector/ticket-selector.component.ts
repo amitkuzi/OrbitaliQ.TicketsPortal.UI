@@ -5,31 +5,42 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { Environments } from '../../../environments/environment.development';
 import { TicketFullData } from '../../Services/TicketFullData';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CartService } from '../../Services/Cart/cart-service.service';
 import { TraslateDirective } from '../../directives/traslate.directive';
 import { LangLocalsService } from '../../Services/langLocals/lang-locals.service';
 import { PricePipe } from "../../pipes/price.pipe";
-
+import { TicketViewComponent } from "../ticket-view/ticket-view.component";
+import { MapitemsDebugPipe } from '../../pipes/mapitems-debug.pipe';
+import { CartSaleble } from '../../Services/Cart';
 
 @Component({
-    selector: 'app-ticket-selector',
-    standalone: true,
-    templateUrl: './ticket-selector.component.html',
-    styleUrl: './ticket-selector.component.css',
-    imports: [
-        MatCardModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        CommonModule,
-        TraslateDirective,
-        PricePipe
-    ]
+  selector: 'app-ticket-selector',
+  standalone: true,
+  templateUrl: './ticket-selector.component.html',
+  styleUrl: './ticket-selector.component.css',
+  imports: [
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    CommonModule,
+    TraslateDirective,
+    PricePipe,
+    TicketViewComponent,
+    MapitemsDebugPipe,
+  ]
 })
 export class TicketSelectorComponent implements OnInit {
+  onClicked($event: CartSaleble) {
+    this.cartService.AddToCart($event);
+  }
+
+
+
+
   onSelect(_t20: TicketFullData) {
     this.cartService.AddToCart(_t20);
   }

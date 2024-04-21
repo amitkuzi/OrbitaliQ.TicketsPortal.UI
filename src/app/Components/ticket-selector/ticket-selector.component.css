@@ -9,3 +9,8 @@ div.left {
 div.right {
     align-items: right;
 }
+
+mat-card {
+    margin: 10px;
+    font-size: x-small;
+}
