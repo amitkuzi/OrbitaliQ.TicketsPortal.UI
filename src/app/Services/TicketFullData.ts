@@ -1,6 +1,7 @@
 import { Price, CartSaleble } from "./Cart";
 
 
+
 export class TicketFullData implements CartSaleble {
     "id": number;
     "name": string;
@@ -39,7 +40,7 @@ export class TicketFullData implements CartSaleble {
 
     "giftCardValue": number;
     "position": number;
-    "entrance": any;
+    "entrance": undefined;
     //{
     //     "type": "OneTime",
     //     "duration": 120,

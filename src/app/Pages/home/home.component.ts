@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { LangLocalsService } from '../../Services/langLocals/lang-locals.service';
 import { CommonModule, KeyValuePipe } from '@angular/common';
 import { MapitemsDebugPipe } from '../../pipes/mapitems-debug.pipe';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -14,19 +13,14 @@ import { Observable } from 'rxjs';
   styleUrl: './home.component.css'
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(
     private langLocalsService: LangLocalsService
   ) { }
 
-  ngOnInit(): void {
-
-
-  }
 
   public get AvailableLanguages$() { return this.langLocalsService.AvailableLanguages$; }
   public get translations$() { return this.langLocalsService.translationsSubject$; }
-
 
 }

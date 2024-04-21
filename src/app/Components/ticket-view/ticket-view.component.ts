@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { TraslateDirective } from '../../directives/traslate.directive';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { TicketFullData } from '../../Services/TicketFullData';
 import { MapitemsDebugPipe } from '../../pipes/mapitems-debug.pipe';
 import { CartSaleble } from '../../Services/Cart';
 

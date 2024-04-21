@@ -12,27 +12,27 @@ import { MapitemsDebugPipe } from "../../pipes/mapitems-debug.pipe";
 import { TicketViewComponent } from "../ticket-view/ticket-view.component";
 
 @Component({
-    selector: 'app-cart-view',
-    standalone: true,
-    templateUrl: './cart-view.component.html',
-    styleUrl: './cart-view.component.css',
-    imports: [
-        MatCardModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        CommonModule,
-        TraslateDirective,
-        PricePipe,
-        MapitemsDebugPipe,
-        TicketViewComponent
-    ]
+  selector: 'app-cart-view',
+  standalone: true,
+  templateUrl: './cart-view.component.html',
+  styleUrl: './cart-view.component.css',
+  imports: [
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    CommonModule,
+    TraslateDirective,
+    PricePipe,
+    MapitemsDebugPipe,
+    TicketViewComponent
+  ]
 })
 export class CartViewComponent implements OnInit {
 
 
 
-  totalPrice: any;
+  totalPrice: number = 0;
   cartItems: CartItem[] = [];
 
   constructor(

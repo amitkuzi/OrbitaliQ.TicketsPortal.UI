@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { Environments } from '../../../environments/environment.development';
 import { TicketFullData } from '../../Services/TicketFullData';
-import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CartService } from '../../Services/Cart/cart-service.service';

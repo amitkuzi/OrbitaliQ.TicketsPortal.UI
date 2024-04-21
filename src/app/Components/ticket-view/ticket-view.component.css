@@ -1,13 +1,12 @@
 mat-card {
-    /*    background-color: aquamarine; */
+    background-color: aquamarine;
     margin: 10px;
     padding: 5px;
     font-size: x-small;
 }
 
 mat-card-title {
-    /* background-color: burlywood; */
-
+    background-color: burlywood;
     font-weight: bold;
     margin: 10px;
     padding: 5px;

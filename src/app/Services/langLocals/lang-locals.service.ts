@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Environments } from '../../../environments/environment';
 import { LangAvailableItem } from './AvailableLanguages.model';
@@ -69,11 +69,11 @@ export class LangLocalsService {
 
     if (typeof appTraslate === 'undefined') return undefined;
 
-    var returnSubject = new BehaviorSubject<string>('');
+    const returnSubject = new BehaviorSubject<string>('');
 
     this.translationsSubject$.subscribe((data: any) => {
       if (data.size === 0) return;
-      var trasVal = data[appTraslate] as string | undefined;
+      let trasVal = data[appTraslate] as string | undefined;
       if (typeof trasVal === 'undefined') { trasVal = appTraslate; }
       returnSubject.next(trasVal as string);
     });

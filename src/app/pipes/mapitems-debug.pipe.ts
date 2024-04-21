@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true
 })
 export class MapitemsDebugPipe implements PipeTransform {
-  transform(value: any, ...args: any[]) {
+  transform(value: unknown) {
     return JSON.stringify(value);
   }
 }
