@@ -1,21 +1,24 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Environments } from '../../../environments/environment';
-import { LangAvailableItem } from './LangAvailable.model';
+import { LangAvailableItem } from './AvailableLanguages.model';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LangLocalsService {
+
   public translationsSubject$: BehaviorSubject<Map<string, string>> = new BehaviorSubject<Map<string, string>>(new Map<string, string>());
   availableLanguages: BehaviorSubject<LangAvailableItem[]> = new BehaviorSubject<LangAvailableItem[]>([]);
 
   constructor(
     private client: HttpClient
   ) {
-
+    this.update();
+    console.log("LangLocalsService constructor");
   }
+
 
   public update(): void {
     console.log("  ngOnInit AvailableLanguages sub start:");
@@ -27,7 +30,7 @@ export class LangLocalsService {
     });
 
     this.UpdateAvailableLanguages();
-    console.log("LangLocalsService ngOnInit");
+    console.log("LangLocalsService update");
 
   }
 
@@ -57,9 +60,23 @@ export class LangLocalsService {
         ServiceGroup: 'tickets',
       })
       .subscribe((translations: Map<string, string>): void => {
-        console.log("LangLocalsService updateTranslations:", translations);
         this.translationsSubject$.next(translations);
       });
   }
 
+
+  public getTranslate(appTraslate: string | undefined): BehaviorSubject<string> | undefined {
+
+    if (typeof appTraslate === 'undefined') return undefined;
+
+    var returnSubject = new BehaviorSubject<string>('');
+
+    this.translationsSubject$.subscribe((data: any) => {
+      if (data.size === 0) return;
+      var trasVal = data[appTraslate] as string | undefined;
+      if (typeof trasVal === 'undefined') { trasVal = appTraslate; }
+      returnSubject.next(trasVal as string);
+    });
+    return returnSubject;
+  }
 }

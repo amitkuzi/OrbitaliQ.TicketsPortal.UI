@@ -20,6 +20,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { TicketSelectorComponent } from './Components/ticket-selector/ticket-selector.component';
 import { CartViewComponent } from "./Components/cart-view/cart-view.component";
 import { MapitemsDebugPipe } from './pipes/mapitems-debug.pipe';
+import { LangLocalsService } from './Services/langLocals/lang-locals.service';
 
 
 
@@ -48,8 +49,10 @@ import { MapitemsDebugPipe } from './pipes/mapitems-debug.pipe';
 export class AppComponent implements OnInit {
 
   title = 'OrbitaliQ.TicketsPortal.UI';
+
   constructor(
     private configService: ServerConfigService,
+    private langLocalsService: LangLocalsService,
   ) {
     console.log('App Component');
   }

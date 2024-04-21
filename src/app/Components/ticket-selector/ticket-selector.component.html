@@ -12,11 +12,13 @@
     </mat-card-header>
     <mat-card-content>
         <mat-toolbar-row *ngFor="let ticket of ticketRepo$ | async">
-            <button mat-fab layout-padding color="primary" (click)="onSelect(ticket)">Add</button>
-            <span layout-padding class="example-spacer"></span>
-            <span layout-padding>{{ticket.name}}</span>
-            <span layout-padding class="example-spacer"></span>
-            <span layout-padding>{{ticket.description}}</span>
+            <button mat-fab color="primary" (click)="onSelect(ticket)">Add</button>
+            <span style="margin: 5px;"></span>
+            <div class="col-md-12 card-title" [appTraslate]="ticket.name"> </div>
+            <span style="margin: 5px;">--</span>
+            <div class="col-md-12" [appTraslate]="ticket.description"></div>
+            <span class="example-spacer"></span>
+            <div class="right">{{ticket.prices.fixedPrice | price}}</div>
 
         </mat-toolbar-row>
     </mat-card-content>

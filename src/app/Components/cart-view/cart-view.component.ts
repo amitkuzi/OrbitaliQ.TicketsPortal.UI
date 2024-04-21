@@ -6,19 +6,25 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CartItem, CartSaleble } from '../../Services/Cart';
+import { TraslateDirective } from '../../directives/traslate.directive';
+import { PricePipe } from '../../pipes/price.pipe';
+import { MapitemsDebugPipe } from "../../pipes/mapitems-debug.pipe";
 
 @Component({
-  selector: 'app-cart-view',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    CommonModule,
-  ],
-  templateUrl: './cart-view.component.html',
-  styleUrl: './cart-view.component.css'
+    selector: 'app-cart-view',
+    standalone: true,
+    templateUrl: './cart-view.component.html',
+    styleUrl: './cart-view.component.css',
+    imports: [
+        MatCardModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        CommonModule,
+        TraslateDirective,
+        PricePipe,
+        MapitemsDebugPipe
+    ]
 })
 export class CartViewComponent implements OnInit {
 

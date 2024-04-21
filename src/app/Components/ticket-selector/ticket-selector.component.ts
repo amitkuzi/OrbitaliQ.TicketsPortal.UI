@@ -9,21 +9,25 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CartService } from '../../Services/Cart/cart-service.service';
+import { TraslateDirective } from '../../directives/traslate.directive';
+import { LangLocalsService } from '../../Services/langLocals/lang-locals.service';
+import { PricePipe } from "../../pipes/price.pipe";
 
 
 @Component({
-  selector: 'app-ticket-selector',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    CommonModule,
-
-  ],
-  templateUrl: './ticket-selector.component.html',
-  styleUrl: './ticket-selector.component.css'
+    selector: 'app-ticket-selector',
+    standalone: true,
+    templateUrl: './ticket-selector.component.html',
+    styleUrl: './ticket-selector.component.css',
+    imports: [
+        MatCardModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        CommonModule,
+        TraslateDirective,
+        PricePipe
+    ]
 })
 export class TicketSelectorComponent implements OnInit {
   onSelect(_t20: TicketFullData) {
@@ -37,14 +41,17 @@ export class TicketSelectorComponent implements OnInit {
     private matToolbarModule: MatToolbarModule,
     private matIconModule: MatIconModule,
     private client: HttpClient,
-    private cartService: CartService
-  ) { }
+    private cartService: CartService,
+    private langLocalsService: LangLocalsService,
+  ) {
+  }
 
   public get ticketRepo$(): Observable<TicketFullData[]> {
     return this.ticketRepo.asObservable();
   }
 
   ngOnInit(): void {
+
     const getPortalTicketsAPi = `${Environments.ticketPortalApi}${Environments.PortalTicketsAPi}`;
     this.client.get<TicketFullData[]>(getPortalTicketsAPi)
       .subscribe((data) => {
